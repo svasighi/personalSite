@@ -6,6 +6,10 @@ export default {
   safelist: ['bg-grid', 'bg-side-bottom'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        serif: ['Inter', ...defaultTheme.fontFamily.serif],
+      },
       keyframes: {
         updown: {
           '0%': { transform: 'translateY(0px)' },

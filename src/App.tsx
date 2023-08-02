@@ -49,7 +49,7 @@ function App() {
           <div className="w-full mb-48 relative">
             <div className="flex items-start w-36 absolute right-5 ">
               <hr className="border-black flex-1 mr-4 mt-10" />
-              <div className="text-black text-sm font-normal leading-tight flex flex-col ">
+              <div className="text-black text-sm font-normal leading-tight flex flex-col text-center">
                 <span className="text-black text-3xl font-semibold leading-9">
                   5
                 </span>
@@ -75,8 +75,8 @@ function App() {
               <hr className="border-black rotate-45" />
             </div>
             <div className="flex items-start w-36 absolute left-5 ">
-              <div className="text-black text-sm font-normal leading-tight flex flex-col text-right">
-                <span className="text-3xl font-semibold leading-9">2+</span>
+              <div className="text-black text-sm font-normal leading-tight flex flex-col text-center">
+                <span className="text-3xl font-semibold leading-9">+2</span>
                 years of
                 <br />
                 Experience
