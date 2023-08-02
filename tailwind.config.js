@@ -16,8 +16,8 @@ export default {
         updown: 'updown 5s ease-in-out infinite',
       },
       backgroundImage: {
-        grid: "url('./public/bg-grid.svg')",
-        'side-bottom': "url('./public/side-bottom.svg')",
+        grid: "url('./bg-grid.svg')",
+        'side-bottom': "url('./side-bottom.svg')",
       },
     },
   },
