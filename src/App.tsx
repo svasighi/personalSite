@@ -62,7 +62,7 @@ function App() {
               </div>
               <hr className="border-black -rotate-45" />
             </div>
-            <div className=" w-24 absolute right-0 left-0 mx-auto bottom-4 group">
+            <div className=" w-24 absolute right-0 left-0 mx-auto bottom-8 group">
               <div className="text-black text-sm font-normal group-hover:font-semibold group-hover:underline leading-tight flex flex-col mb-14 text-center z-10 ">
                 LinkedIn
               </div>
@@ -88,7 +88,7 @@ function App() {
         </div>
 
         <div className="absolute bottom-2 right-0 left-0 animate-updown">
-          <div className="relative mx-auto w-24 h-60 z-10 bg-amber-300/20 backdrop-blur-xl rounded-full  border border-black"></div>
+          <div className="relative mx-auto w-24 h-60 z-10 bg-gradient-to-b from-amber-100/100 to-40% to-amber-300/۲0 backdrop-blur-xl rounded-full  border border-black"></div>
           <img
             className="z-10 mx-auto w-36 h-56 absolute top-3 right-0 left-0"
             src="/profile.png"
