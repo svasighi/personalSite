@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 
 declare type SectionProps = {
   children: ReactNode;
-  title: string;
+  title: string | ReactNode;
 };
 
 const Section = ({ children, title }: SectionProps) => {

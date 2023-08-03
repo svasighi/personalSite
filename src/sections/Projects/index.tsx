@@ -43,8 +43,8 @@ const ProjectsTab = () => {
               className="w-full h-60 object-cover object-center"
               alt={item.title}
             />
-            <div className="block bg-slate-700 absolute rounded-2xl inset-0 bg-opacity-30 group-hover:bg-opacity-70 group-hover:bg-amber-300 transition-all duration-200">
-              <div className="hidden flex-col justify-center text-center p-6 group-hover:flex transition duration-200 h-full my-auto space-y-2">
+            <div className="block bg-slate-700 absolute rounded-2xl inset-0 bg-opacity-30 group-hover:bg-opacity-70 group-hover:bg-amber-300 transition-all duration-500">
+              <div className="opacity-0 flex-col justify-center text-center p-6 group-hover:opacity-100 flex transition duration-500 h-full my-auto space-y-2">
                 <p className="text-gray-700 text-2xl font-semibold leading-7">
                   {item.title}
                 </p>

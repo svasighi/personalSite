@@ -7,6 +7,7 @@ import Testimonials from './sections/Testimonials';
 import Experience from './sections/Experience';
 
 import Projects from './sections/Projects';
+import Contact from './sections/Contact';
 
 function App() {
   const scrollableRef = useRef<HTMLDivElement>(null);
@@ -53,6 +54,15 @@ function App() {
             <Testimonials />
             <Experience />
             <Projects />
+            <Contact />
+            <div className="py-12 flex-col justify-start items-center inline-flex">
+              <div className="text-black text-base font-normal leading-normal text-center">
+                designed and developed By me
+              </div>
+              <div className="text-black text-base font-normal leading-normal">
+                with️ ❤️‍️ in a day and half
+              </div>
+            </div>
           </div>
         </div>
         <div className="w-14 h-80 px-4 mt-16 py-8 bg-gray-50 bg-opacity-10 rounded-3xl border border-gray-400 backdrop-blur-lg flex-col justify-start items-start gap-8 inline-flex"></div>

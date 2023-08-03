@@ -11,9 +11,9 @@ const StackSlider = () => {
       loop={true}
       freeMode={{ momentum: false }}
       autoplay={{ delay: 0, pauseOnMouseEnter: false }}
-      speed={2000}
+      speed={5000}
       direction="vertical"
-      className="ease-linear">
+      className="ease-line">
       {Stacks.map((stack) => (
         <SwiperSlide>
           <div
