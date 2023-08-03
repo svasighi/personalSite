@@ -55,7 +55,7 @@ function App() {
             <Experience />
             <Projects />
             <Contact />
-            <div className="py-12 flex-col justify-start items-center inline-flex">
+            <div className="py-8 flex-col justify-start items-center inline-flex">
               <div className="text-black text-base font-normal leading-normal text-center">
                 designed and developed By me
               </div>
