@@ -9,9 +9,9 @@ const StackSlider = () => {
       spaceBetween={0}
       slidesPerView={6}
       loop={true}
-      freeMode={{ momentum: false }}
+      freeMode={{ momentum: true }}
       autoplay={{ delay: 0, pauseOnMouseEnter: false }}
-      speed={5000}
+      speed={4000}
       direction="vertical"
       className="ease-line">
       {Stacks.map((stack) => (
