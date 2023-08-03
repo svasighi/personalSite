@@ -18,10 +18,13 @@ const Experience = () => {
                   <div className="w-1 flex-1 border-l items-center border-dashed border-gray-400"></div>
                 )}
                 <div
-                  className={classNames('bg-amber-200 h-6 w-6 rounded-full', {
-                    'mt-12': i == 0,
-                    'mb-12': i + 1 == MY_EXPERIENCES.length,
-                  })}></div>
+                  className={classNames(
+                    ' group-hover:bg-amber-400 transition-colors duration-500 ease-in-out bg-amber-200 h-6 w-6 rounded-full',
+                    {
+                      'mt-12': i == 0,
+                      'mb-12': i + 1 == MY_EXPERIENCES.length,
+                    }
+                  )}></div>
                 {i + 1 != MY_EXPERIENCES.length && (
                   <div className="w-1 flex-1 border-l border-dashed border-gray-400"></div>
                 )}
