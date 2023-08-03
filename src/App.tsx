@@ -1,10 +1,10 @@
-import { StackSlider } from './sections/StackSlider/';
+import StackSlider from './sections/StackSlider/';
 import { useEffect, useRef } from 'react';
 
-import { Bio } from './sections/Bio';
-import { Sidebar } from './sections/Sidebar';
-import { Testimonials } from './sections/Testimonials';
-import Experience from './sections/Experience/Experience';
+import Bio from './sections/Bio';
+import Sidebar from './sections/Sidebar';
+import Testimonials from './sections/Testimonials';
+import Experience from './sections/Experience';
 
 function App() {
   const scrollableRef = useRef<HTMLDivElement>(null);
