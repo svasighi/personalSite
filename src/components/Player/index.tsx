@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { PauseIcon, PlayIcon } from '@heroicons/react/24/solid';
 import { HTMLProps, useEffect, useLayoutEffect, useState, useRef } from 'react';
-import WaveSurfer from 'wavesurfer.js';
+import WaveSurfer, { WaveSurferEvents } from 'wavesurfer.js';
 import { motion } from 'framer-motion';
 
 import SPECTRUM_CONFIG from './config';
@@ -18,6 +18,10 @@ const Player = ({
       const initial = WaveSurfer.create(SPECTRUM_CONFIG);
       initial.load('/file_example.mp3');
       spectrumRef.current = initial;
+      initial.on('finish', () => {
+        initial.stop();
+        setPlaying(false);
+      });
     }
   });
 

@@ -1,6 +1,8 @@
 import StackSlider from './sections/StackSlider/';
 import { useEffect, useRef } from 'react';
 
+import { motion } from 'framer-motion';
+
 import Bio from './sections/Bio';
 import Sidebar from './sections/Sidebar';
 import Testimonials from './sections/Testimonials';
@@ -65,8 +67,9 @@ function App() {
         </div>
         <div className="w-14 h-80 px-4 mt-16 py-8 bg-gray-50 bg-opacity-10 rounded-3xl border border-gray-400 backdrop-blur-lg flex-col justify-start items-start gap-8 inline-flex"></div>
       </div>
-      <div className="w-16  h-16 absolute rounded-full bg-pink-500 right-8 top-20 -z-10 blur-3xl"></div>
-      <div className="w-32 h-32 absolute rounded-full  bg-yellow-500 -z-10 right-32 -top-12 blur-3xl"></div>
+      <motion.div className="w-16  h-16 absolute rounded-full bg-pink-500 right-8 top-20 -z-10 blur-3xl"></motion.div>
+
+      <motion.div className="w-32 h-32 absolute rounded-full  bg-yellow-500 -z-10 right-32 -top-12 blur-3xl"></motion.div>
     </>
   );
 }
