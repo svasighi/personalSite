@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { PlayIcon } from '@heroicons/react/24/solid';
+import { PauseIcon, PlayIcon } from '@heroicons/react/24/solid';
 import { HTMLProps, useEffect, useLayoutEffect, useState, useRef } from 'react';
 import WaveSurfer from 'wavesurfer.js';
 import { motion } from 'framer-motion';
@@ -40,7 +40,11 @@ const Player = ({
         whileHover={{ scale: 1.15 }}
         whileTap={{ scale: 0.95 }}
         className="bg-gray-200 h-11 w-11 flex justify-center items-center rounded-2xl space-x-3">
-        <PlayIcon className="text-amber-400 w-4 h-4" />
+        {playing ? (
+          <PauseIcon className="text-amber-400 w-5 h-5" />
+        ) : (
+          <PlayIcon className="text-amber-400 w-4 h-4" />
+        )}
       </motion.div>
       <div className="flex-1" id="wave"></div>
     </div>
