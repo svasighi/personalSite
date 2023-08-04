@@ -1,5 +1,6 @@
 import Section from '../../components/Section';
-import player from '../../assets/player.svg';
+import Player from '../../components/Player';
+
 const Testimonials = () => {
   return (
     <Section title="Trusted by Great people">
@@ -10,12 +11,16 @@ const Testimonials = () => {
             <div className="text-gray-700 text-base font-semibold leading-normal">
               Mohsen Gholam
             </div>
-            <div className="text-gray-400 text-sm font-medium leading-tight">
+            <div className="text-gray-400 text-sm font-normal leading-tight">
               founder at MaherHa.com
+            </div>
+            <div className="flex space-x-1">
+              <img></img>
+              <></>
             </div>
           </div>
         </div>
-        <p className="line-clamp-3 text-gray-700 text-base font-medium leading-normal">
+        <p className="line-clamp-3 text-gray-700 text-base font-normal leading-normal">
           "Shadmehr was a real pleasure to work with and we look forward to
           working with him again. He's definitely the kind of designer that you
           can trust with any project from A-Z." "Shadmehr was a real pleasure to
@@ -23,8 +28,7 @@ const Testimonials = () => {
           definitely the kind of designer that you can trust with any project
           from A-Z."
         </p>
-
-        <img src={player} className="h-14 w-80" alt="player" />
+        <Player className="h-14 w-80" file="data" />
       </div>
     </Section>
   );

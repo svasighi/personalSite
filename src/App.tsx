@@ -6,7 +6,7 @@ import Sidebar from './sections/Sidebar';
 import Testimonials from './sections/Testimonials';
 import Experience from './sections/Experience';
 
-import Projects from './sections/Projects';
+import Portfolio from './sections/Portfolio';
 import Contact from './sections/Contact';
 
 function App() {
@@ -17,8 +17,6 @@ function App() {
       scrollableRef &&
         scrollableRef.current &&
         (scrollableRef.current.scrollTop += event.deltaY / 7);
-
-      console.log(scrollableRef.current?.scrollTop);
     });
 
     window.addEventListener('keydown', (event: KeyboardEvent) => {
@@ -53,7 +51,7 @@ function App() {
             <Bio />
             <Testimonials />
             <Experience />
-            <Projects />
+            <Portfolio />
             <Contact />
             <div className="py-8 flex-col justify-start items-center inline-flex">
               <div className="text-black text-base font-normal leading-normal text-center">

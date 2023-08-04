@@ -2,7 +2,8 @@ import { ReactNode, useState } from 'react';
 
 import classNames from 'classnames';
 import { motion } from 'framer-motion';
-
+import { LinkIcon, InformationCircleIcon } from '@heroicons/react/24/outline';
+//Todo refactor code
 type tabHeaderProps = {
   tabs: {
     id: string;
@@ -29,61 +30,58 @@ const EXERCISES = [
     link: 'https://maherha.com',
   },
 ];
+type itemPropsType = {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+};
+//Todo add modal
+function PortfolioItem(props: itemPropsType) {
+  const { link, image, title, description } = props;
+  return (
+    <div className="relative border overflow-hidden h-full w-full rounded-2xl group">
+      <img
+        src={image}
+        className="w-full h-60 object-cover object-center"
+        alt={title}
+      />
+      <div className="block bg-slate-700 absolute rounded-2xl inset-0 bg-opacity-30 group-hover:bg-opacity-70 group-hover:bg-amber-300 transition-all duration-500">
+        <div className="opacity-0 flex-col justify-center text-center p-6 group-hover:opacity-100 flex transition duration-500 h-full my-auto space-y-2">
+          <p className="text-gray-700 text-2xl font-semibold leading-7">
+            {title}
+          </p>
+          <p className=" text-center text-gray-600 text-base font-normal leading-normal">
+            {description}
+          </p>
+          <div className="flex items-center justify-center space-x-3">
+            <a href={link} className="bg-white rounded-full w-10 p-2">
+              <LinkIcon className=" text-slate-600" />
+            </a>
+            <InformationCircleIcon className="w-10 p-2 text-slate-600 bg-white rounded-full" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const ProjectsTab = () => {
   return (
     <div className="grid grid-cols-2 gap-7">
       {EXERCISES.map((item) => {
-        return (
-          <a
-            href={item.link}
-            className="relative border overflow-hidden h-full w-full rounded-2xl group">
-            <img
-              src={item.image}
-              className="w-full h-60 object-cover object-center"
-              alt={item.title}
-            />
-            <div className="block bg-slate-700 absolute rounded-2xl inset-0 bg-opacity-30 group-hover:bg-opacity-70 group-hover:bg-amber-300 transition-all duration-500">
-              <div className="opacity-0 flex-col justify-center text-center p-6 group-hover:opacity-100 flex transition duration-500 h-full my-auto space-y-2">
-                <p className="text-gray-700 text-2xl font-semibold leading-7">
-                  {item.title}
-                </p>
-                <p className=" text-center text-gray-600 text-base font-normal leading-normal">
-                  {item.description}
-                </p>
-              </div>
-            </div>
-          </a>
-        );
+        return <PortfolioItem key={item.id} {...item}></PortfolioItem>;
       })}
     </div>
   );
 };
+
 const ExercisesTab = () => {
   return (
     <div className="grid grid-cols-2 gap-7">
       {EXERCISES.map((item) => {
-        return (
-          <a
-            href={item.link}
-            className="relative border overflow-hidden h-full w-full rounded-2xl group">
-            <img
-              src={item.image}
-              className="w-full h-60 object-cover object-center"
-              alt={item.title}
-            />
-            <div className="block bg-slate-700 absolute rounded-2xl inset-0 bg-opacity-30 group-hover:bg-opacity-70 group-hover:bg-amber-300 transition-all duration-200">
-              <div className="hidden flex-col justify-center text-center p-6 group-hover:flex transition duration-200 h-full my-auto space-y-2">
-                <p className="text-gray-700 text-2xl font-semibold leading-7">
-                  {item.title}
-                </p>
-                <p className=" text-center text-gray-600 text-base font-normal leading-normal">
-                  {item.description}
-                </p>
-              </div>
-            </div>
-          </a>
-        );
+        return <PortfolioItem key={item.id} {...item}></PortfolioItem>;
       })}
     </div>
   );
@@ -127,7 +125,7 @@ function TabHeader({ tabs, activeTab, setActiveTab }: tabHeaderProps) {
   );
 }
 
-const Projects = () => {
+const Portfolio = () => {
   let [activeTab, setActiveTab] = useState<string>(tabs[0].id);
 
   return (
@@ -150,4 +148,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Portfolio;
