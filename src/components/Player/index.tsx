@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { PauseIcon, PlayIcon } from '@heroicons/react/24/solid';
 import { HTMLProps, useEffect, useLayoutEffect, useState, useRef } from 'react';
-import WaveSurfer, { WaveSurferEvents } from 'wavesurfer.js';
+import WaveSurfer from 'wavesurfer.js';
 import { motion } from 'framer-motion';
 
 import SPECTRUM_CONFIG from './config';
