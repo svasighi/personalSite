@@ -64,9 +64,9 @@ function App() {
           </div>
         </div>
         <div className="relative top-12 hidden h-80 w-14 flex-col items-start justify-start gap-8 rounded-3xl border border-gray-400 bg-gray-50 bg-opacity-10 px-4 py-8 backdrop-blur-lg md:top-16 md:hidden lg:top-20 lg:inline-flex"></div>
-        <motion.div className="absolute  right-8 top-20 -z-10 h-16 w-16 rounded-full bg-pink-500 blur-3xl"></motion.div>
-        <motion.div className="absolute -top-12 right-32 -z-10  h-32 w-32 rounded-full bg-yellow-500 blur-3xl"></motion.div>
       </div>
+      <motion.div className="absolute  right-8 top-20 -z-10 h-16 w-16 rounded-full bg-pink-500 blur-3xl"></motion.div>
+      <motion.div className="absolute -top-12 right-32 -z-10  h-32 w-32 rounded-full bg-yellow-500 blur-3xl"></motion.div>
     </>
   );
 }

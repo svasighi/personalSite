@@ -4,7 +4,10 @@ import { Stacks } from "../../constants/stacks";
 import { motion } from "framer-motion";
 
 const StackTicker = ({ isLg }: { isLg: Boolean }) => {
-  const animationStates = [{ x: -innerWidth }, { y: -innerHeight }];
+  const animationStates = [
+    { x: -(Stacks.length * 192) },
+    { y: -(Stacks.length * 192) },
+  ];
   const [animation, setAnimation] = useState(animationStates[1]);
 
   useEffect(() => {
@@ -16,37 +19,43 @@ const StackTicker = ({ isLg }: { isLg: Boolean }) => {
   }, [isLg]);
 
   return (
-    <motion.div
-      key={animation.x}
-      transition={{
-        type: "tween",
-        duration: 20,
-        ease: "linear",
-        repeat: Infinity,
-      }}
-      whileHover={{
-        scale: 1.2,
-      }}
-      initial={isLg ? { y: 0 } : { x: 0 }}
-      animate={animation}
-      className="flex items-center space-x-20 lg:flex-col lg:space-x-0"
-    >
-      {Stacks.map((stack) => (
-        <div
-          key={stack.id}
-          className="flex flex-row items-center space-x-3 lg:my-10 lg:w-6 lg:flex-col lg:justify-center lg:space-x-0 lg:space-y-3"
+    <div className="flex items-center lg:flex-col ">
+      {[Stacks, Stacks].map((stack) => (
+        <motion.div
+          key={animation.x}
+          transition={{
+            type: "tween",
+            duration: 40,
+            ease: "linear",
+            repeat: Infinity,
+          }}
+          whileHover={{
+            scale: 1.2,
+          }}
+          initial={isLg ? { y: 0 } : { x: 0 }}
+          animate={animation}
+          className="flex items-center lg:flex-col lg:space-x-0"
         >
-          <p className="lg:-rotate-180 lg:[writing-mode:vertical-rl]">
-            {stack.name}
-          </p>
-          <img
-            className="h-6 lg:-rotate-90"
-            src={stack.image}
-            alt={stack.name}
-          />
-        </div>
+          {stack.map((item) => {
+            return (
+              <div
+                key={item.id}
+                className="flex h-6 w-40 flex-row items-center justify-center space-x-3 lg:h-48 lg:w-6 lg:flex-col lg:space-x-0 lg:space-y-3"
+              >
+                <p className="lg:-rotate-180 lg:[writing-mode:vertical-rl]">
+                  {item.name}
+                </p>
+                <img
+                  className="w-6 lg:h-6 lg:-rotate-90"
+                  src={item.image}
+                  alt={item.name}
+                />
+              </div>
+            );
+          })}
+        </motion.div>
       ))}
-    </motion.div>
+    </div>
   );
 };
 export default StackTicker;
