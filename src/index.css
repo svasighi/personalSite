@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 body {
-  @apply overflow-y-scroll selection:bg-amber-100 selection:text-slate-500 lg:overflow-hidden;
+  @apply overflow-x-hidden overflow-y-scroll selection:bg-amber-100 selection:text-slate-500 lg:overflow-hidden;
 }
 ::-webkit-scrollbar {
   width: 0;
