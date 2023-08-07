@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Stacks } from "../../constants/stacks";
 
-import { color, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const StackTicker = ({ isLg }: { isLg: Boolean }) => {
   const animationStates = [{ x: -innerWidth }, { y: -innerHeight }];
