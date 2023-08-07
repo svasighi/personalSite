@@ -1,15 +1,10 @@
 @tailwind base;
 @tailwind components;
 body {
-  @apply overflow-hidden selection:bg-amber-100 selection:text-slate-500;
+  @apply overflow-y-scroll selection:bg-amber-100 selection:text-slate-500 lg:overflow-hidden;
 }
 ::-webkit-scrollbar {
   width: 0;
 }
-.swiper-wrapper {
-  @apply ease-linear;
-}
-.swiper-slide {
-  @apply flex items-center;
-}
+
 @tailwind utilities;

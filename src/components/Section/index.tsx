@@ -1,5 +1,5 @@
-import classNames from 'classnames';
-import { ReactNode } from 'react';
+import classNames from "classnames";
+import { ReactNode } from "react";
 
 declare type SectionProps = {
   children: ReactNode;
@@ -8,9 +8,9 @@ declare type SectionProps = {
 
 const Section = ({ children, title }: SectionProps) => {
   return (
-    <div className={classNames('flex flex-col', { 'space-y-4': title })}>
+    <div className={classNames("flex flex-col", { "space-y-4": title })}>
       {title && (
-        <div className="text-gray-800 text-xl font-semibold leading-7">
+        <div className="text-xl font-semibold leading-7 text-gray-800">
           {title}
         </div>
       )}

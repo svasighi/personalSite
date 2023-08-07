@@ -1,75 +1,72 @@
-import StackSlider from './sections/StackSlider/';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
-import Bio from './sections/Bio';
-import Sidebar from './sections/Sidebar';
-import Testimonials from './sections/Testimonials';
-import Experience from './sections/Experience';
+import Bio from "./sections/Bio";
+import Sidebar from "./sections/Sidebar";
+import Testimonials from "./sections/Testimonials";
+import Experience from "./sections/Experience";
 
-import Portfolio from './sections/Portfolio';
-import Contact from './sections/Contact';
+import Portfolio from "./sections/Portfolio";
+import Contact from "./sections/Contact";
+import StackTicker from "./sections/StackTicker";
+import { useBreakpoint } from "./hooks/useBreakpoints";
+import { handleKeyboardScroll, handleWheelScroll } from "./utils/scroll";
 
 function App() {
+  const { isLg } = useBreakpoint("lg");
+
   const scrollableRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    window.addEventListener('wheel', (event: WheelEvent) => {
-      scrollableRef &&
-        scrollableRef.current &&
-        (scrollableRef.current.scrollTop += event.deltaY / 7);
-    });
-
-    window.addEventListener('keydown', (event: KeyboardEvent) => {
-      switch (event.keyCode) {
-        case 38:
-          // pressed up arrow
-          scrollableRef &&
-            scrollableRef.current &&
-            (scrollableRef.current.scrollTop -= 20);
-          break;
-        case 40:
-          // pressed down arrow
-          scrollableRef &&
-            scrollableRef.current &&
-            (scrollableRef.current.scrollTop += 20);
-          break;
-      }
-    });
-  }, []);
+    if (isLg) {
+      window.addEventListener("wheel", (event: WheelEvent) => {
+        handleWheelScroll(event, scrollableRef);
+      });
+      window.addEventListener("keydown", (event: KeyboardEvent) => {
+        handleKeyboardScroll(event, scrollableRef);
+      });
+    } else {
+      window.removeEventListener("wheel", (event: WheelEvent) => {
+        handleWheelScroll(event, scrollableRef);
+      });
+      window.removeEventListener("keydown", (event: KeyboardEvent) => {
+        handleKeyboardScroll(event, scrollableRef);
+      });
+    }
+  }, [isLg]);
 
   return (
     <>
-      <div className="container flex space-x-7 justify-between h-screen box-border mx-auto px-14">
+      <div className="container mx-auto box-border flex h-screen  flex-col justify-between px-8 md:px-0 lg:flex-row lg:space-x-10 lg:px-12 xl:px-24">
         {/* picture */}
         <Sidebar />
 
-        <StackSlider />
+        <StackTicker isLg={isLg} />
         <div
-          ref={scrollableRef}
-          className="flex-1 px-12 py-8 mt-16 h-auto rounded-xl text-justify overflow-auto">
-          <div className="flex flex-col space-y-12">
+          ref={isLg ? scrollableRef : null}
+          className="h-auto flex-1 rounded-xl text-justify lg:overflow-auto"
+        >
+          <div className="flex flex-col space-y-12 pt-12 md:pt-16 lg:pt-20">
             <Bio />
             <Testimonials />
             <Experience />
             <Portfolio />
             <Contact />
-            <div className="py-8 flex-col justify-start items-center inline-flex">
-              <div className="text-black text-base font-normal leading-normal text-center">
+            <div className="inline-flex flex-col items-center justify-start py-8">
+              <div className="text-center text-base font-normal leading-normal text-black">
                 designed and developed By me
               </div>
-              <div className="text-black text-base font-normal leading-normal">
+              <div className="text-base font-normal leading-normal text-black">
                 with️ ❤️‍️ in a day and half
               </div>
             </div>
           </div>
         </div>
-        <div className="w-14 h-80 px-4 mt-16 py-8 bg-gray-50 bg-opacity-10 rounded-3xl border border-gray-400 backdrop-blur-lg flex-col justify-start items-start gap-8 inline-flex"></div>
+        <div className="relative top-12 hidden h-80 w-14 flex-col items-start justify-start gap-8 rounded-3xl border border-gray-400 bg-gray-50 bg-opacity-10 px-4 py-8 backdrop-blur-lg md:top-16 md:hidden lg:top-20 lg:inline-flex"></div>
       </div>
-      <motion.div className="w-16  h-16 absolute rounded-full bg-pink-500 right-8 top-20 -z-10 blur-3xl"></motion.div>
-
-      <motion.div className="w-32 h-32 absolute rounded-full  bg-yellow-500 -z-10 right-32 -top-12 blur-3xl"></motion.div>
+      <motion.div className="absolute  right-8 top-20 -z-10 h-16 w-16 rounded-full bg-pink-500 blur-3xl"></motion.div>
+      <motion.div className="absolute -top-12 right-32 -z-10  h-32 w-32 rounded-full bg-yellow-500 blur-3xl"></motion.div>
     </>
   );
 }
