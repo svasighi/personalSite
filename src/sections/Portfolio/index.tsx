@@ -3,6 +3,7 @@ import { ReactNode, useState } from "react";
 import classNames from "classnames";
 import { motion } from "framer-motion";
 import { LinkIcon, InformationCircleIcon } from "@heroicons/react/24/outline";
+import Section from "../../components/Section";
 //Todo refactor code
 type tabHeaderProps = {
   tabs: {
@@ -127,10 +128,10 @@ function TabHeader({ tabs, activeTab, setActiveTab }: tabHeaderProps) {
 }
 
 const Portfolio = () => {
-  let [activeTab, setActiveTab] = useState<string>(tabs[0].id);
+  const [activeTab, setActiveTab] = useState<string>(tabs[0].id);
 
   return (
-    <div className="flex flex-col space-y-6">
+    <Section className="flex flex-col space-y-6">
       <TabHeader
         tabs={tabs}
         activeTab={activeTab}
@@ -147,7 +148,7 @@ const Portfolio = () => {
           {tabs.filter((tab) => tab.id == activeTab)[0]?.component}
         </motion.div>
       </>
-    </div>
+    </Section>
   );
 };
 

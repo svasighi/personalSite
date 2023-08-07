@@ -1,7 +1,8 @@
+import Section from "../../components/Section";
 import { MY_BIO } from "../../constants/texts";
 const Bio = () => {
   return (
-    <div className="flex flex-col space-y-8">
+    <Section className="flex flex-col space-y-8">
       <div className="flex flex-col items-start space-y-2">
         <div className="flex items-center">
           <hr className="mr-1.5 w-12 border-gray-800" />
@@ -23,7 +24,7 @@ const Bio = () => {
           {MY_BIO}
         </p>
       </div>
-    </div>
+    </Section>
   );
 };
 export default Bio;

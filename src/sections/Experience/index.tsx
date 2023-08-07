@@ -9,9 +9,7 @@ const Experience = () => {
         {MY_EXPERIENCES.map((experience, i, MY_EXPERIENCES) => {
           return (
             <div className="group flex space-x-4" key={experience.title}>
-              <div
-                className={classNames("flex w-[22px] flex-col items-center ")}
-              >
+              <div className={classNames("flex flex-col items-center ")}>
                 <div
                   className={classNames(
                     " h-6 w-6 rounded-full bg-amber-200 transition-colors duration-500 ease-in-out group-hover:bg-amber-400",
