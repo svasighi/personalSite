@@ -38,7 +38,7 @@ function App() {
 
   return (
     <>
-      <div className="container mx-auto box-border flex h-screen flex-col justify-between px-8 lg:flex-row lg:space-x-10 lg:px-12 xl:px-24">
+      <div className="container mx-auto box-border flex h-screen flex-col justify-between px-4 md:px-8 lg:flex-row lg:space-x-10 lg:px-12 xl:px-24">
         {/* picture */}
         <Sidebar />
 
