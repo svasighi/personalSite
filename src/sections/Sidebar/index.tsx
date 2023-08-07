@@ -14,51 +14,53 @@ const Sidebar = () => {
           </div>
         </div>
 
-        <div className=" relative inset-x-0 mx-auto mb-48 w-96">
-          <div className="absolute right-5 flex w-36 items-start ">
+        <div className="absolute inset-x-0 bottom-0 mx-auto mb-48 w-full max-w-[330px] md:w-96 md:max-w-none">
+          <div className="absolute right-2 flex w-40 items-start md:right-5 ">
             <hr className="mr-4 mt-10 flex-1 border-black" />
             <div className="flex flex-col text-center text-sm font-normal leading-tight text-black">
-              <span className="text-3xl font-semibold leading-9 text-black">
+              <span className="text-lg font-semibold leading-9 md:text-3xl">
                 5
               </span>
               projects
             </div>
           </div>
-          <div className=" text group absolute bottom-0 right-24 mx-auto w-24">
+          <div className="text group absolute bottom-0 right-20 mx-auto w-24">
             <div className="z-10 -mr-24 mb-12 flex flex-col text-center text-sm font-normal leading-tight text-black group-hover:font-semibold group-hover:underline ">
               Whatsapp
             </div>
             <hr className="-rotate-45 border-black" />
           </div>
-          <div className=" group absolute bottom-8 left-0 right-0 mx-auto w-24">
+          <div className="group absolute bottom-8 left-0 right-0 mx-auto w-24">
             <div className="z-10 mb-14 flex flex-col text-center text-sm font-normal leading-tight text-black group-hover:font-semibold group-hover:underline ">
               LinkedIn
             </div>
             <hr className="rotate-90 border-black" />
           </div>
-          <div className=" text group absolute bottom-0 left-24 mx-auto w-24">
+          <div className="text group absolute bottom-0 left-20 mx-auto w-24">
             <div className="z-10 -ml-20 mb-12 flex flex-col text-center text-sm font-normal leading-tight text-black group-hover:font-semibold group-hover:underline ">
               Whatsapp
             </div>
             <hr className="rotate-45 border-black" />
           </div>
-          <div className="absolute left-5 flex w-36 items-start ">
+          <div className="absolute left-2 flex w-40 items-start md:left-5 ">
             <div className="flex flex-col text-center text-sm font-normal leading-tight text-black">
-              <span className="text-3xl font-semibold leading-9">+2</span>
+              <span className="text-lg font-semibold leading-9 md:text-3xl">
+                +2
+              </span>
               years of
               <br />
               Experience
             </div>
-            <hr className="ml-2 mt-10 flex-1 border-black" />
+            <hr className=" mt-10 flex-1 border-black" />
           </div>
         </div>
         <div className="absolute bottom-0 left-0 h-16 w-full justify-center bg-side-bottom bg-center bg-no-repeat"></div>
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 animate-updown lg:bottom-2">
-        <div className="to-amber-300/۲0 relative z-10 mx-auto h-60 w-24 rounded-full border border-black bg-gradient-to-b from-amber-100/100  to-40% backdrop-blur-xl"></div>
+        <div className="relative z-10 mx-auto h-60 w-20 rounded-full border border-black bg-gradient-to-b from-amber-100/100 to-amber-300/20 to-40% backdrop-blur-xl  md:h-60 md:w-24"></div>
         <img
-          className="absolute left-0 right-0 top-3 z-10 mx-auto h-56 w-36"
+          className="absolute left-0 right-0 top-3 z-10 mx-auto h-48 w-32 md:h-56 md:w-36"
           src="/profile.png"
         />
       </div>
