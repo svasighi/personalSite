@@ -12,15 +12,15 @@ const Contact = () => {
     >
       <div className="flex flex-col space-y-20">
         <div className="text-base font-normal leading-normal text-gray-700">
-          <div>
+          <div className="hyphens-auto text-start" lang="en">
             I am interested in companies that provide a dynamic and progressive
             working environment, and offer challenging opportunities in my field
             of expertise.
           </div>
-          <div className="mt-10 flex items-center">
+          <div className="tex mt-10 flex flex-wrap items-center">
             I am available for both
             <div className="mx-3 inline-flex w-20 items-center justify-center space-x-2">
-              <img src="/wavy.svg" aria-hidden="true" className="h-full " />
+              <img src="/wavy.svg" aria-hidden="true" className="h-full" />
               <ul className="min-w-max flex-1 space-y-2 text-base font-semibold leading-normal text-gray-700">
                 <li>remote</li>
                 <li>in-office</li>

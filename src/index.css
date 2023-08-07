@@ -6,5 +6,8 @@ body {
 ::-webkit-scrollbar {
   width: 0;
 }
+#root {
+  overflow-x: hidden;
+}
 
 @tailwind utilities;

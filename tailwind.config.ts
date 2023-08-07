@@ -5,7 +5,7 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   safelist: ["bg-grid", "bg-side-bottom"],
   theme: {
-    screens: { md: "768px", lg: "1200px", xl: "1440px" },
+    screens: { sm: "480px", md: "768px", lg: "1200px", xl: "1440px" },
     extend: {
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],

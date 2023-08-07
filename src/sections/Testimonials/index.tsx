@@ -4,7 +4,7 @@ import Player from "../../components/Player";
 const Testimonials = () => {
   return (
     <Section title="Trusted by Great people">
-      <div className="flex h-72 w-full flex-col space-y-4 rounded-3xl border border-gray-300 bg-gray-50 px-10 py-9">
+      <div className="flex h-72 w-full flex-col space-y-4 rounded-3xl border border-gray-300 bg-gray-50 px-8 py-9 lg:px-10">
         <div className="inline-flex items-center justify-start gap-4">
           <img className="h-12 w-12 rounded-3xl" src="/mr-gholami.png" />
           <div className="inline-flex flex-col items-start justify-start gap-px">
@@ -28,7 +28,7 @@ const Testimonials = () => {
           definitely the kind of designer that you can trust with any project
           from A-Z."
         </p>
-        <Player className="h-14 w-80" file="data" />
+        <Player className="h-14 w-full sm:w-80" file="data" />
       </div>
     </Section>
   );
