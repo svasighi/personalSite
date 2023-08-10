@@ -28,7 +28,7 @@ export function TabHeader({ tabs, activeTab, setActiveTab }: tabHeaderProps) {
         >
           {activeTab === tab.id && (
             <motion.span
-              layoutId="underline"
+              layoutId="tab"
               className={styles["tab-header__item-active__pill"]}
               transition={{
                 type: "spring",
