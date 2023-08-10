@@ -7,16 +7,16 @@ import { motion } from "framer-motion";
 import SPECTRUM_CONFIG from "./config";
 
 const Player = ({
-  file,
+  file_url,
   ...props
-}: { file: string } & HTMLProps<HTMLDivElement>) => {
+}: { file_url: string } & HTMLProps<HTMLDivElement>) => {
   const [playing, setPlaying] = useState<boolean>(false);
   const spectrumRef = useRef<WaveSurfer>();
 
   useLayoutEffect(() => {
     if (!spectrumRef.current) {
       const initial = WaveSurfer.create(SPECTRUM_CONFIG);
-      initial.load("/sample-12s.mp3");
+      initial.load(file_url);
       spectrumRef.current = initial;
       initial.on("finish", () => {
         initial.stop();
@@ -52,7 +52,7 @@ const Player = ({
           <PlayIcon className="h-4 w-4 text-amber-400" />
         )}
       </motion.div>
-      <div className="flex-1" id="wave"></div>
+      <div className="flex-1" id={SPECTRUM_CONFIG.container.slice(1)}></div>
     </div>
   );
 };

@@ -3,6 +3,8 @@ import { Stacks } from "../../constants/stacks";
 
 import { motion } from "framer-motion";
 
+import styles from "./StackTicker.module.scss";
+
 const StackTicker = ({ isLg }: { isLg: Boolean }) => {
   const animationStates = [
     { x: -(Stacks.length * 192) },
@@ -19,10 +21,11 @@ const StackTicker = ({ isLg }: { isLg: Boolean }) => {
   }, [isLg]);
 
   return (
-    <div className="flex items-center lg:flex-col ">
-      {[Stacks, Stacks].map((stack) => (
+    <div className={styles.wrapper}>
+      {[Stacks, Stacks].map((stack, block) => (
         <motion.div
-          key={animation.x}
+          //added for reRendering on breakpoints changes
+          key={Math.random()}
           transition={{
             type: "tween",
             duration: 40,
@@ -34,22 +37,13 @@ const StackTicker = ({ isLg }: { isLg: Boolean }) => {
           }}
           initial={isLg ? { y: 0 } : { x: 0 }}
           animate={animation}
-          className="flex items-center lg:flex-col lg:space-x-0"
+          className={styles.stacks}
         >
           {stack.map((item) => {
             return (
-              <div
-                key={item.id}
-                className="flex h-6 w-40 flex-row items-center justify-center space-x-3 lg:h-48 lg:w-6 lg:flex-col lg:space-x-0 lg:space-y-3"
-              >
-                <p className="lg:-rotate-180 lg:[writing-mode:vertical-rl]">
-                  {item.name}
-                </p>
-                <img
-                  className="w-6 lg:h-6 lg:-rotate-90"
-                  src={item.image}
-                  alt={item.name}
-                />
+              <div key={`${item.name},${block}`} className={styles.stack_item}>
+                <p>{item.name}</p>
+                <img src={item.image} alt={item.name} />
               </div>
             );
           })}

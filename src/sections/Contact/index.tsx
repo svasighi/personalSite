@@ -1,4 +1,6 @@
+import Button from "../../components/Button";
 import Section from "../../components/Section";
+import styles from "./Contact.module.scss";
 
 const Contact = () => {
   return (
@@ -10,18 +12,18 @@ const Contact = () => {
         </>
       }
     >
-      <div className="flex flex-col space-y-20">
-        <div className="text-base font-normal leading-normal text-gray-700">
-          <div className="hyphens-auto text-start" lang="en">
+      <div className={styles.wrapper}>
+        <div className={styles.description}>
+          <div className={styles["hyphens-text"]} lang="en">
             I am interested in companies that provide a dynamic and progressive
             working environment, and offer challenging opportunities in my field
             of expertise.
           </div>
-          <div className="tex mt-10 flex flex-wrap items-center">
+          <div className={styles["list-text"]}>
             I am available for both
-            <div className="mx-3 inline-flex w-20 items-center justify-center space-x-2">
-              <img src="/wavy.svg" aria-hidden="true" className="h-full" />
-              <ul className="min-w-max flex-1 space-y-2 text-base font-semibold leading-normal text-gray-700">
+            <div className={styles.list}>
+              <img src="/wavy.svg" aria-hidden="true" />
+              <ul>
                 <li>remote</li>
                 <li>in-office</li>
               </ul>
@@ -29,9 +31,9 @@ const Contact = () => {
             work and relocation is not a concern for me.
           </div>
         </div>
-        <div className="mx-auto mt-10 inline-flex max-w-lg items-center justify-center gap-1.5 rounded-3xl border-b-4 border-slate-800 bg-amber-100 px-6 py-2 text-base font-medium leading-normal text-gray-800 transition-all duration-300 hover:bg-amber-200 active:border-b">
+        <Button tag="a" href="mailto:shadmehr.vasighi99@gmail.com">
           👋🏼 say me hello
-        </div>
+        </Button>
       </div>
     </Section>
   );
